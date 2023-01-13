@@ -10,5 +10,8 @@ Chapter 06, 07
 ### 2023.01.12
 Chapter 07, 08, 09
 
+### 2023.01.13
+Chapter 10, 11, 12
+
 ### POST
 https://velog.io/@jinhuyk/series/java-datastruct-algorithm
