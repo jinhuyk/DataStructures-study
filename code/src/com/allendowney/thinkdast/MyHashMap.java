@@ -48,7 +48,6 @@ public class MyHashMap<K, V> extends MyBetterMap<K, V> implements Map<K, V> {
 				put(e.getKey(),e.getValue());
 			}
 		}
-		// TODO: FILL THIS IN!
 	}
 
 	/**
