@@ -40,6 +40,14 @@ public class MyHashMap<K, V> extends MyBetterMap<K, V> implements Map<K, V> {
 	 *
 	 */
 	protected void rehash() {
+		List<MyLinearMap<K,V>> oldMaps = maps;
+		makeMaps(maps.size()*2);
+		
+		for(MyLinearMap<K,V> map : oldMaps) {
+			for(Entry<K,V> e :map.getEntries()) {
+				put(e.getKey(),e.getValue());
+			}
+		}
 		// TODO: FILL THIS IN!
 	}
 
