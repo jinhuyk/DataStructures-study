@@ -70,8 +70,16 @@ public class MyTreeMap<K, V> implements Map<K, V> {
 		// something to make the compiler happy
 		@SuppressWarnings("unchecked")
 		Comparable<? super K> k = (Comparable<? super K>) target;
-
-		// TODO: FILL THIS IN!
+		Node node = root;
+		while(node != null) {
+			if(k.compareTo(node.key)>0) {
+				node = node.right;
+			}
+			else if(k.compareTo(node.key)<0) {
+				node = node.left;
+			}
+			else return node;
+		}
 		return null;
 	}
 
@@ -95,7 +103,10 @@ public class MyTreeMap<K, V> implements Map<K, V> {
 	}
 
 	private boolean containsValueHelper(Node node, Object target) {
-		// TODO: FILL THIS IN!
+		if(node==null) return false;
+		if((node.value).equals(target)) return true;
+		if(containsValueHelper(node.left,target)) return true;
+		if(containsValueHelper(node.right,target)) return true;
 		return false;
 	}
 
@@ -121,10 +132,19 @@ public class MyTreeMap<K, V> implements Map<K, V> {
 	@Override
 	public Set<K> keySet() {
 		Set<K> set = new LinkedHashSet<K>();
-		// TODO: FILL THIS IN!
+		
+		getKey(set,root);
 		return set;
 	}
-
+	
+	public void getKey(Set set, Node node) {
+		if(node == null) return;
+		
+		getKey(set,node.left);
+		set.add(node.key);
+		getKey(set, node.right);
+		
+	}
 	@Override
 	public V put(K key, V value) {
 		if (key == null) {
@@ -139,8 +159,31 @@ public class MyTreeMap<K, V> implements Map<K, V> {
 	}
 
 	private V putHelper(Node node, K key, V value) {
-		// TODO: FILL THIS IN!
-		return null;
+		Comparable<? super K> k = (Comparable<? super K>) key;
+		if(k.compareTo(node.key)>0) {
+			if(node.right == null ) {
+				node.right = new Node(key, value);
+				size++;
+				return null;
+			} else {
+				return putHelper(node.right,key,value);
+			}
+		}
+		else if(k.compareTo(node.key)<0) {
+			if(node.left == null ) {
+				node.left = new Node(key, value);
+				size++;
+				return null;
+			}
+			else {
+				return putHelper(node.left,key,value);
+			}
+		}
+		else {
+			V oldv = node.value;
+			node.value = value;
+			return oldv;
+		}
 	}
 
 	@Override
