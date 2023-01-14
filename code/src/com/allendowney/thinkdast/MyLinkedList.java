@@ -9,6 +9,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
+/* written by Jinhuyk. Mun 
+ * 2023.01.10
+ */
+
 /**
  * @author downey
  * @param <E>
