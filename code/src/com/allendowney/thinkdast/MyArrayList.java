@@ -1,3 +1,5 @@
+
+
 package com.allendowney.thinkdast;
 
 import java.util.Arrays;
@@ -13,6 +15,7 @@ import java.util.ListIterator;
  */
 
 /* written by Jinhuyk. Mun 
+ * 2023.01.07
  */
 public class MyArrayList<T> implements List<T> {
 	int size;                    // keeps track of the number of elements

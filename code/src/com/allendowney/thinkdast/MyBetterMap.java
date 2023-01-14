@@ -7,6 +7,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+/* written by Jinhuyk. Mun 
+ * 2023.01.13
+ */
+
+
+
 /**
  * Implementation of a Map using a collection of MyLinearMap, and
  * using `hashCode` to determine which map each key should go in.

@@ -6,6 +6,10 @@ package com.allendowney.thinkdast;
 import java.util.List;
 import java.util.Map;
 
+/* written by Jinhuyk. Mun 
+ * 2023.01.13
+ */
+
 /**
  * Implementation of a HashMap using a collection of MyLinearMap and
  * resizing when there are too many entries.
